@@ -1,5 +1,5 @@
 {
-  "name": "http-server",
+  "name": "@wufe/http-server",
   "version": "14.1.0",
   "description": "A simple zero-configuration command-line http server",
   "main": "./lib/http-server",
@@ -19,6 +19,7 @@
   ],
   "scripts": {
     "start": "node ./bin/http-server",
+    "dev": "nodemon --watch '*.js' --exec 'yarn start $PWD --public-url http://localhost:8080'",
     "test": "tap --reporter=spec test/*.test.js",
     "test-watch": "tap --reporter=spec --watch test/*.test.js"
   },
@@ -88,6 +89,7 @@
     "basic-auth": "^2.0.1",
     "chalk": "^4.1.2",
     "corser": "^2.0.1",
+    "globby": "^13.1.1",
     "he": "^1.2.0",
     "html-encoding-sniffer": "^3.0.0",
     "http-proxy": "^1.18.1",
@@ -101,9 +103,8 @@
   },
   "devDependencies": {
     "eol": "^0.9.1",
-    "eslint": "^4.19.1",
-    "eslint-config-populist": "^4.2.0",
     "express": "^4.17.1",
+    "nodemon": "^2.0.16",
     "request": "^2.88.2",
     "tap": "^14.11.0"
   },

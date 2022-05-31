@@ -73,6 +73,7 @@ var port = argv.p || argv.port || parseInt(process.env.PORT, 10),
     proxyOptions = argv['proxy-options'],
     utc = argv.U || argv.utc,
     version = argv.v || argv.version,
+    publicURL = argv['public-url'],
     logger;
 
 var proxyOptionsBooleanProps = [
@@ -152,6 +153,7 @@ function listen(port) {
     proxyOptions: proxyOptions,
     showDotfiles: argv.dotfiles,
     mimetypes: argv.mimetypes,
+    publicURL,
     username: argv.username || process.env.NODE_HTTP_SERVER_USERNAME,
     password: argv.password || process.env.NODE_HTTP_SERVER_PASSWORD
   };
